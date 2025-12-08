@@ -4,6 +4,14 @@
 
 V lang libui examples, forked from [libui_examples](https://github.com/funatsufumiya/libui_examples)
 
+## Usage
+
+### Install as a library (v-libui)
+
+```bash
+$ git clone https://github.com/funatsufumiya/libui_examples_v ~/.vmodules/libui
+```
+
 -------
 
 Original README
