@@ -1,6 +1,7 @@
 # libui examples V
 
-***WORK-IN-PROGRESS***
+> [!NOTE]
+> Currently have only [minimal example](./examples/minimal/main.v)
 
 V lang libui examples, forked from [libui_examples](https://github.com/funatsufumiya/libui_examples)
 
