@@ -7,7 +7,7 @@ Examples are automatically compiled and exposed at [actions](https://github.com/
 ### Windows
 
 ```bash
-./build.bat
+.\build.bat
 
 # then run each .exe in bin folder
 ```
