@@ -5,3 +5,7 @@
 uiControl* asUiControl(void* ptr){
     return (uiControl*) ptr;
 }
+
+// uiControl* winAsUiControl(uiWindow* ptr){
+//     return (uiControl*) ptr;
+// }

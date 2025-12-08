@@ -160,10 +160,15 @@ pub struct UiInitOptions {
 }
 
 pub fn C.asUiControl(v voidptr) &C.uiControl
+// pub fn C.winAsUiControl(v voidptr) &C.uiControl
 
 pub fn uiControl(v voidptr) &C.uiControl {
 	return C.asUiControl(v)
 }
+
+// pub fn winAsUiControl(v &C.uiWindow) &C.uiControl {
+// 	return C.winAsUiControl(v)
+// }
 
 pub fn C.uiInit(options &C.uiInitOptions) &i8
 
