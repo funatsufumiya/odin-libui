@@ -50,9 +50,9 @@ pub struct C.uiControl {
 }
 
 @[typedef]
-pub type C.uiWindow = C.uiControl
+pub type C.uiWindow = int
 @[typedef]
-pub type C.uiBox = C.uiControl
+pub type C.uiBox = int
 
 @[typedef]
 pub struct C.uiInitOptions {
@@ -413,9 +413,9 @@ pub fn ui_window_set_margined(w &C.uiWindow, margined int) {
 	C.uiWindowSetMargined(w, margined)
 }
 
-pub fn C.uiNewWindow(title &i8, width int, height int, has_menubar int) C.uiWindow
+pub fn C.uiNewWindow(title &i8, width int, height int, has_menubar int) &C.uiWindow
 
-pub fn ui_new_window(title &i8, width int, height int, has_menubar int) C.uiWindow {
+pub fn ui_new_window(title &i8, width int, height int, has_menubar int) &C.uiWindow {
 	return C.uiNewWindow(title, width, height, has_menubar)
 }
 
@@ -921,112 +921,125 @@ pub fn ui_new_non_wrapping_multiline_entry() C.uiMultilineEntry {
 	return C.uiNewNonWrappingMultilineEntry()
 }
 
-pub fn C.uiMenuItemEnable(m C.uiMenuItem)
+pub fn C.uiMenuItemEnable(m &C.uiMenuItem)
 
-pub fn ui_menu_item_enable(m C.uiMenuItem) {
+pub fn ui_menu_item_enable(m &C.uiMenuItem) {
 	C.uiMenuItemEnable(m)
 }
 
-pub fn C.uiMenuItemDisable(m C.uiMenuItem)
+pub fn C.uiMenuItemDisable(m &C.uiMenuItem)
 
-pub fn ui_menu_item_disable(m C.uiMenuItem) {
+pub fn ui_menu_item_disable(m &C.uiMenuItem) {
 	C.uiMenuItemDisable(m)
 }
 
-pub fn C.uiMenuItemOnClicked(m C.uiMenuItem, f fn (C.uiMenuItem, C.uiWindow, voidptr), data voidptr)
+pub fn C.uiMenuItemOnClicked(m &C.uiMenuItem, f fn (&C.uiMenuItem, &C.uiWindow, voidptr), data voidptr)
 
-pub fn ui_menu_item_on_clicked(m C.uiMenuItem, f fn (C.uiMenuItem, C.uiWindow, voidptr), data voidptr) {
+pub fn ui_menu_item_on_clicked(m &C.uiMenuItem, f fn (&C.uiMenuItem, &C.uiWindow, voidptr), data voidptr) {
 	C.uiMenuItemOnClicked(m, f, data)
 }
 
-pub fn C.uiMenuItemChecked(m C.uiMenuItem) int
+pub fn C.uiMenuItemChecked(m &C.uiMenuItem) int
 
-pub fn ui_menu_item_checked(m C.uiMenuItem) int {
+pub fn ui_menu_item_checked(m &C.uiMenuItem) int {
 	return C.uiMenuItemChecked(m)
 }
 
-pub fn C.uiMenuItemSetChecked(m C.uiMenuItem, checked int)
+pub fn C.uiMenuItemSetChecked(m &C.uiMenuItem, checked int)
 
-pub fn ui_menu_item_set_checked(m C.uiMenuItem, checked int) {
+pub fn ui_menu_item_set_checked(m &C.uiMenuItem, checked int) {
 	C.uiMenuItemSetChecked(m, checked)
 }
 
-pub fn C.uiMenuAppendItem(m C.uiMenu, name &i8) C.uiMenuItem
+pub fn C.uiMenuAppendItem(m &C.uiMenu, name &i8) &C.uiMenuItem
 
-pub fn ui_menu_append_item(m C.uiMenu, name &i8) C.uiMenuItem {
+pub fn ui_menu_append_item(m &C.uiMenu, name &i8) &C.uiMenuItem {
 	return C.uiMenuAppendItem(m, name)
 }
 
-pub fn C.uiMenuAppendCheckItem(m C.uiMenu, name &i8) C.uiMenuItem
+pub fn C.uiMenuAppendCheckItem(m &C.uiMenu, name &i8) &C.uiMenuItem
 
-pub fn ui_menu_append_check_item(m C.uiMenu, name &i8) C.uiMenuItem {
+pub fn ui_menu_append_check_item(m &C.uiMenu, name &i8) &C.uiMenuItem {
 	return C.uiMenuAppendCheckItem(m, name)
 }
 
-pub fn C.uiMenuAppendQuitItem(m C.uiMenu) C.uiMenuItem
+pub fn C.uiMenuAppendQuitItem(m &C.uiMenu) &C.uiMenuItem
 
-pub fn ui_menu_append_quit_item(m C.uiMenu) C.uiMenuItem {
+pub fn ui_menu_append_quit_item(m &C.uiMenu) &C.uiMenuItem {
 	return C.uiMenuAppendQuitItem(m)
 }
 
-pub fn C.uiMenuAppendPreferencesItem(m C.uiMenu) C.uiMenuItem
+pub fn C.uiMenuAppendPreferencesItem(m &C.uiMenu) &C.uiMenuItem
 
-pub fn ui_menu_append_preferences_item(m C.uiMenu) C.uiMenuItem {
+pub fn ui_menu_append_preferences_item(m &C.uiMenu) &C.uiMenuItem {
 	return C.uiMenuAppendPreferencesItem(m)
 }
 
-pub fn C.uiMenuAppendAboutItem(m C.uiMenu) C.uiMenuItem
+pub fn C.uiMenuAppendAboutItem(m &C.uiMenu) &C.uiMenuItem
 
-pub fn ui_menu_append_about_item(m C.uiMenu) C.uiMenuItem {
+pub fn ui_menu_append_about_item(m &C.uiMenu) &C.uiMenuItem {
 	return C.uiMenuAppendAboutItem(m)
 }
 
-pub fn C.uiMenuAppendSeparator(m C.uiMenu)
+pub fn C.uiMenuAppendSeparator(m &C.uiMenu)
 
-pub fn ui_menu_append_separator(m C.uiMenu) {
+pub fn ui_menu_append_separator(m &C.uiMenu) {
 	C.uiMenuAppendSeparator(m)
 }
 
-pub fn C.uiNewMenu(name &i8) C.uiMenu
+pub fn C.uiNewMenu(name &i8) &C.uiMenu
 
-pub fn ui_new_menu(name &i8) C.uiMenu {
+pub fn ui_new_menu(name &i8) &C.uiMenu {
 	return C.uiNewMenu(name)
 }
 
-pub fn C.uiOpenFile(parent C.uiWindow) &i8
+pub fn C.uiOpenFile(parent &C.uiWindow) &i8
 
-pub fn ui_open_file(parent C.uiWindow) &i8 {
+pub fn ui_open_file(parent &C.uiWindow) &i8 {
 	return C.uiOpenFile(parent)
 }
 
-pub fn C.uiSaveFile(parent C.uiWindow) &i8
+pub fn C.uiSaveFile(parent &C.uiWindow) &i8
 
-pub fn ui_save_file(parent C.uiWindow) &i8 {
+pub fn ui_save_file(parent &C.uiWindow) &i8 {
 	return C.uiSaveFile(parent)
 }
 
-pub fn C.uiMsgBox(parent C.uiWindow, title &i8, description &i8)
+pub fn C.uiMsgBox(parent &C.uiWindow, title &i8, description &i8)
 
-pub fn ui_msg_box(parent C.uiWindow, title &i8, description &i8) {
+pub fn ui_msg_box(parent &C.uiWindow, title &i8, description &i8) {
 	C.uiMsgBox(parent, title, description)
 }
 
-pub fn C.uiMsgBoxError(parent C.uiWindow, title &i8, description &i8)
+pub fn C.uiMsgBoxError(parent &C.uiWindow, title &i8, description &i8)
 
-pub fn ui_msg_box_error(parent C.uiWindow, title &i8, description &i8) {
+pub fn ui_msg_box_error(parent &C.uiWindow, title &i8, description &i8) {
 	C.uiMsgBoxError(parent, title, description)
 }
 
-pub struct UiWindowResizeEdge {
-	draw fn (C.uiAreaHandler, C.uiArea, C.uiAreaDrawParams)
-	// TODO document that resizes cause a full redraw for non-scrolling areas; implementation-defined for scrolling areas
-	mouseEvent fn (C.uiAreaHandler, C.uiArea, C.uiAreaMouseEvent)
-	// TODO document that on first show if the mouse is already in the uiArea then one gets sent with left=0
-	// TODO what about when the area is hidden and then shown again?
-	mouseCrossed fn (C.uiAreaHandler, C.uiArea, int)
-	dragBroken   fn (C.uiAreaHandler, C.uiArea)
-	keyEvent     fn (C.uiAreaHandler, C.uiArea, C.uiAreaKeyEvent) int
-}
+// pub struct C.uiWindowResizeEdge {
+// 	draw fn (C.uiAreaHandler, C.uiArea, C.uiAreaDrawParams)
+// 	// TODO document that resizes cause a full redraw for non-scrolling areas; implementation-defined for scrolling areas
+// 	mouseEvent fn (C.uiAreaHandler, C.uiArea, C.uiAreaMouseEvent)
+// 	// TODO document that on first show if the mouse is already in the uiArea then one gets sent with left=0
+// 	// TODO what about when the area is hidden and then shown again?
+// 	mouseCrossed fn (C.uiAreaHandler, C.uiArea, int)
+// 	dragBroken   fn (C.uiAreaHandler, C.uiArea)
+// 	keyEvent     fn (C.uiAreaHandler, C.uiArea, C.uiAreaKeyEvent) int
+// }
+// @[typedef]
+// pub enum C.uiWindowResizeEdge {
+// 	ui_window_resize_edge_left,
+// 	ui_window_resize_edge_top,
+// 	ui_window_resize_edge_right,
+// 	C.uiWindowResizeEdgeBottom,
+// 	C.uiWindowResizeEdgeTopLeft,
+// 	C.uiWindowResizeEdgeTopRight,
+// 	C.uiWindowResizeEdgeBottomLeft,
+// 	C.uiWindowResizeEdgeBottomRight,
+// }
+
+pub type C.uiWindowResizeEdge = int
 
 // TODO RTL layouts?
 // TODO reconcile edge and corner naming
@@ -1075,9 +1088,9 @@ pub fn ui_area_begin_user_window_move(a C.uiArea) {
 	C.uiAreaBeginUserWindowMove(a)
 }
 
-pub fn C.uiAreaBeginUserWindowResize(a C.uiArea, edge UiWindowResizeEdge)
+pub fn C.uiAreaBeginUserWindowResize(a C.uiArea, edge C.uiWindowResizeEdge)
 
-pub fn ui_area_begin_user_window_resize(a C.uiArea, edge UiWindowResizeEdge) {
+pub fn ui_area_begin_user_window_resize(a C.uiArea, edge C.uiWindowResizeEdge) {
 	C.uiAreaBeginUserWindowResize(a, edge)
 }
 
