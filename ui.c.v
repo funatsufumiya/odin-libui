@@ -6,6 +6,8 @@ module libui
 #flag -L @VMODROOT/bin
 #flag -lui
 
+#include <string.h>
+#include <stdlib.h>
 #include "ui.h"
 
 // 6 april 2015
@@ -33,6 +35,11 @@ pub type C.uiForEach = u32
 pub type C.uiWindow = C.uiControl
 @[typedef]
 pub type C.uiBox = C.uiControl
+
+@[typedef]
+pub struct C.uiInitOptions {
+	size C.size_t
+}
 
 pub struct C.attr {
 	val &C.uiAttribute
@@ -321,81 +328,81 @@ pub fn ui_user_bug_cannot_set_parent_on_toplevel(type_ &i8) {
 	C.uiUserBugCannotSetParentOnToplevel(type_)
 }
 
-pub fn C.uiWindowTitle(w C.uiWindow) &i8
+pub fn C.uiWindowTitle(w &C.uiWindow) &i8
 
-pub fn ui_window_title(w C.uiWindow) &i8 {
+pub fn ui_window_title(w &C.uiWindow) &i8 {
 	return C.uiWindowTitle(w)
 }
 
-pub fn C.uiWindowSetTitle(w C.uiWindow, title &i8)
+pub fn C.uiWindowSetTitle(w &C.uiWindow, title &i8)
 
-pub fn ui_window_set_title(w C.uiWindow, title &i8) {
+pub fn ui_window_set_title(w &C.uiWindow, title &i8) {
 	C.uiWindowSetTitle(w, title)
 }
 
-pub fn C.uiWindowContentSize(w C.uiWindow, width &int, height &int)
+pub fn C.uiWindowContentSize(w &C.uiWindow, width &int, height &int)
 
-pub fn ui_window_content_size(w C.uiWindow, width &int, height &int) {
+pub fn ui_window_content_size(w &C.uiWindow, width &int, height &int) {
 	C.uiWindowContentSize(w, width, height)
 }
 
-pub fn C.uiWindowSetContentSize(w C.uiWindow, width int, height int)
+pub fn C.uiWindowSetContentSize(w &C.uiWindow, width int, height int)
 
-pub fn ui_window_set_content_size(w C.uiWindow, width int, height int) {
+pub fn ui_window_set_content_size(w &C.uiWindow, width int, height int) {
 	C.uiWindowSetContentSize(w, width, height)
 }
 
-pub fn C.uiWindowFullscreen(w C.uiWindow) int
+pub fn C.uiWindowFullscreen(w &C.uiWindow) int
 
-pub fn ui_window_fullscreen(w C.uiWindow) int {
+pub fn ui_window_fullscreen(w &C.uiWindow) int {
 	return C.uiWindowFullscreen(w)
 }
 
-pub fn C.uiWindowSetFullscreen(w C.uiWindow, fullscreen int)
+pub fn C.uiWindowSetFullscreen(w &C.uiWindow, fullscreen int)
 
-pub fn ui_window_set_fullscreen(w C.uiWindow, fullscreen int) {
+pub fn ui_window_set_fullscreen(w &C.uiWindow, fullscreen int) {
 	C.uiWindowSetFullscreen(w, fullscreen)
 }
 
-pub fn C.uiWindowOnContentSizeChanged(w C.uiWindow, f fn (C.uiWindow, voidptr), data voidptr)
+pub fn C.uiWindowOnContentSizeChanged(w &C.uiWindow, f fn (C.uiWindow, voidptr), data voidptr)
 
-pub fn ui_window_on_content_size_changed(w C.uiWindow, f fn (C.uiWindow, voidptr), data voidptr) {
+pub fn ui_window_on_content_size_changed(w &C.uiWindow, f fn (C.uiWindow, voidptr), data voidptr) {
 	C.uiWindowOnContentSizeChanged(w, f, data)
 }
 
-pub fn C.uiWindowOnClosing(w C.uiWindow, f fn (C.uiWindow, voidptr) int, data voidptr)
+pub fn C.uiWindowOnClosing(w &C.uiWindow, f fn (&C.uiWindow, voidptr) int, data voidptr)
 
-pub fn ui_window_on_closing(w C.uiWindow, f fn (C.uiWindow, voidptr) int, data voidptr) {
+pub fn ui_window_on_closing(w &C.uiWindow, f fn (&C.uiWindow, voidptr) int, data voidptr) {
 	C.uiWindowOnClosing(w, f, data)
 }
 
-pub fn C.uiWindowBorderless(w C.uiWindow) int
+pub fn C.uiWindowBorderless(w &C.uiWindow) int
 
-pub fn ui_window_borderless(w C.uiWindow) int {
+pub fn ui_window_borderless(w &C.uiWindow) int {
 	return C.uiWindowBorderless(w)
 }
 
-pub fn C.uiWindowSetBorderless(w C.uiWindow, borderless int)
+pub fn C.uiWindowSetBorderless(w &C.uiWindow, borderless int)
 
-pub fn ui_window_set_borderless(w C.uiWindow, borderless int) {
+pub fn ui_window_set_borderless(w &C.uiWindow, borderless int) {
 	C.uiWindowSetBorderless(w, borderless)
 }
 
-pub fn C.uiWindowSetChild(w C.uiWindow, child &C.uiControl)
+pub fn C.uiWindowSetChild(w &C.uiWindow, child &C.uiControl)
 
-pub fn ui_window_set_child(w C.uiWindow, child &C.uiControl) {
+pub fn ui_window_set_child(w &C.uiWindow, child &C.uiControl) {
 	C.uiWindowSetChild(w, child)
 }
 
-pub fn C.uiWindowMargined(w C.uiWindow) int
+pub fn C.uiWindowMargined(w &C.uiWindow) int
 
-pub fn ui_window_margined(w C.uiWindow) int {
+pub fn ui_window_margined(w &C.uiWindow) int {
 	return C.uiWindowMargined(w)
 }
 
-pub fn C.uiWindowSetMargined(w C.uiWindow, margined int)
+pub fn C.uiWindowSetMargined(w &C.uiWindow, margined int)
 
-pub fn ui_window_set_margined(w C.uiWindow, margined int) {
+pub fn ui_window_set_margined(w &C.uiWindow, margined int) {
 	C.uiWindowSetMargined(w, margined)
 }
 
