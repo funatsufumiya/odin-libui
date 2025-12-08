@@ -24,6 +24,6 @@ fn main() {
 
 	w := C.uiNewWindow(c"Hello", 320, 240, 0);
 	C.uiWindowOnClosing(w, on_closing, unsafe {nil} );
-	C.uiControlShow(w);
+	C.uiControlShow(libui.uiControl(&w));
 	C.uiMain();
 }

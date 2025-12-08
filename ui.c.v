@@ -9,6 +9,7 @@ module libui
 #include <string.h>
 #include <stdlib.h>
 #include "ui.h"
+#include "ui_helper.h"
 
 // 6 april 2015
 // TODO add a uiVerifyControlType() function that can be used by control implementations to verify controls
@@ -31,6 +32,23 @@ module libui
 // _UI_ENUM(uiForEach) {
 pub type C.uiForEach = u32
 
+pub struct C.uiControl {
+	signature     u32
+	oSSignature   u32
+	typeSignature u32
+	destroy       fn (&C.uiControl)
+	handle        fn (&C.uiControl) C.uintptr_t
+	parent        fn (&C.uiControl) &C.uiControl
+	setParent     fn (&C.uiControl, &C.uiControl)
+	toplevel      fn (&C.uiControl) int
+	visible       fn (&C.uiControl) int
+	show          fn (&C.uiControl)
+	hide          fn (&C.uiControl)
+	enabled       fn (&C.uiControl) int
+	enable        fn (&C.uiControl)
+	disable       fn (&C.uiControl)
+}
+
 @[typedef]
 pub type C.uiWindow = C.uiControl
 @[typedef]
@@ -38,7 +56,7 @@ pub type C.uiBox = C.uiControl
 
 @[typedef]
 pub struct C.uiInitOptions {
-	size C.size_t
+	Size C.size_t
 }
 
 pub struct C.attr {
@@ -141,9 +159,15 @@ pub struct UiInitOptions {
 	size usize
 }
 
-pub fn C.uiInit(options C.uiInitOptions) &i8
+pub fn C.asUiControl(v voidptr) &C.uiControl
 
-pub fn ui_init(options C.uiInitOptions) &i8 {
+pub fn uiControl(v voidptr) &C.uiControl {
+	return C.asUiControl(v)
+}
+
+pub fn C.uiInit(options &C.uiInitOptions) &i8
+
+pub fn ui_init(options &C.uiInitOptions) &i8 {
 	return C.uiInit(options)
 }
 
@@ -211,23 +235,6 @@ pub fn C.uiFreeText(text &i8)
 
 pub fn ui_free_text(text &i8) {
 	C.uiFreeText(text)
-}
-
-pub struct C.uiControl {
-	signature     u32
-	oSSignature   u32
-	typeSignature u32
-	destroy       fn (&C.uiControl)
-	handle        fn (&C.uiControl) C.uintptr_t
-	parent        fn (&C.uiControl) &C.uiControl
-	setParent     fn (&C.uiControl, &C.uiControl)
-	toplevel      fn (&C.uiControl) int
-	visible       fn (&C.uiControl) int
-	show          fn (&C.uiControl)
-	hide          fn (&C.uiControl)
-	enabled       fn (&C.uiControl) int
-	enable        fn (&C.uiControl)
-	disable       fn (&C.uiControl)
 }
 
 // TOOD add argument names to all arguments
