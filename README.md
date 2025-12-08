@@ -21,6 +21,15 @@ $ ./build.sh
 $ DYLD_LIBRARY_PATH=bin bin/graph
 ```
 
+### Linux
+
+```bash
+$ ./build.sh
+
+# run executables, for example:
+$ LD_LIBRARY_PATH=bin bin/graph
+```
+
 ## Screenshots
 
 ![screenshots/basic_controls.png](screenshots/basic_controls.png)
