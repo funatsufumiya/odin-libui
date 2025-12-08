@@ -49,6 +49,7 @@ pub struct C.uiControl {
 	disable       fn (&C.uiControl)
 }
 
+// WORKAROUNDS
 @[typedef]
 pub type C.uiWindow = int
 @[typedef]

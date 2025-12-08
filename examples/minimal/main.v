@@ -13,12 +13,10 @@ fn on_closing(w &C.uiWindow, data voidptr) int
 }
 
 fn main() {
-	// o := C.uiInitOptions{}
-	o := &C.uiInitOptions(unsafe {nil})
-	// w := &C.uiWindow
+	o := C.uiInitOptions{}
 
-	unsafe { C.memset(o, 0, sizeof (C.uiInitOptions)) }
-	if C.uiInit(o) != unsafe {nil} {
+	unsafe { C.memset(&o, 0, sizeof (C.uiInitOptions)) }
+	if C.uiInit(&o) != unsafe {nil} {
 		// C.abort();
 		assert(false)
     }
