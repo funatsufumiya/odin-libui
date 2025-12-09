@@ -18,7 +18,7 @@ $ git clone https://github.com/funatsufumiya/v-libui ~/.vmodules/libui
 ### Windows
 
 ```bash
-.\build.bat
+.\build.ps1
 
 # then run each .exe in bin folder
 ```

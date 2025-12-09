@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-mkdir bin
+mkdir bin 1>/dev/null 2>/dev/null
 
 # CC=clang
 # $CC -lui -I. -L bin -o "bin/calender" "examples/calender/main.c" 
