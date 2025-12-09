@@ -5,6 +5,7 @@ import "core:fmt"
 import "core:strings"
 import "core:time"
 import "base:runtime"
+import "core:c/libc"
 import ui "../.."
 import util "../example_util"
 
@@ -30,24 +31,24 @@ on_changed :: proc "c" (d: ^ui.uiDateTimePicker, data: rawptr) {
     buf: [64]u8
     fmt := time_format(d)
 
-    // FIXME: implement
-    // time.strftime(&buf[0], len(buf), fmt, &tm)
+    fmt_cstr := strings.clone_to_cstring(fmt, allocator = context.temp_allocator)
 
-    ui.uiLabelSetText(cast(^ui.uiLabel)(data), strings.clone_to_cstring(fmt, allocator = context.temp_allocator))
+    libc.strftime(&buf[0], len(buf), fmt_cstr, &tm)
+
+    ui.uiLabelSetText(cast(^ui.uiLabel)(data), cstring(&buf[0]))
 }
 
 on_clicked :: proc "c" (b: ^ui.uiButton, data: rawptr) {
-    now := cast(int)(uintptr(data))
-    t: time.Time
-    if now != 0 {
-        t = time.now()
-    } else {
-        t = time.Time{_nsec = 0}
-    }
-    tm: ui.tm
+    now := uintptr(data)
+    t: libc.time_t
+    t = 0
+    tm: libc.tm
 
-    // FIXME: implement
-    // ui.time_to_tm(t, &tm)
+    if now != 0 {
+        t = libc.time(nil)
+    }
+
+    tm = libc.localtime(&t)^
 
     if now != 0 {
         ui.uiDateTimePickerSetTime(dtdate, &tm)

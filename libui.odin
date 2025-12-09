@@ -16,6 +16,7 @@ when ODIN_OS == .Darwin   do foreign import lib "bin/libui.dylib"
 when ODIN_OS == .Linux   do foreign import lib "bin/libui.so"
 
 import "core:c"
+import "core:c/libc"
 
 uiPi :: 3.14159265358979323846264338327950288419716939937510582097494459
 
@@ -278,7 +279,7 @@ foreign lib {
 	uiNewRadioButtons         :: proc() -> ^uiRadioButtons ---
 }
 
-tm               :: struct {}
+tm :: libc.tm
 uiDateTimePicker :: struct {}
 
 @(default_calling_convention="c")
