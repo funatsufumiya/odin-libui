@@ -15,6 +15,7 @@ Dynamic libraries are already placed in this repo. These were prebuilt from [lib
 - [timer](./examples/timer/main.odin)
 - [calendar](./examples/calendar/main.odin)
 - [graph](./examples/graph/main.odin)
+- [label](./examples/label/main.odin)
 
 ### Windows
 
