@@ -14,6 +14,7 @@ Dynamic libraries are already placed in this repo. These were prebuilt from [lib
 - [minimal](./examples/minimal/main.odin)
 - [timer](./examples/timer/main.odin)
 - [calendar](./examples/calendar/main.odin)
+- [graph](./examples/graph/main.odin)
 
 ### Windows
 
@@ -29,7 +30,7 @@ Dynamic libraries are already placed in this repo. These were prebuilt from [lib
 $ ./build.sh
 
 # run executables, for example:
-$ DYLD_LIBRARY_PATH=bin bin/timer
+$ DYLD_LIBRARY_PATH=bin bin/graph
 ```
 
 ### Linux
@@ -38,7 +39,7 @@ $ DYLD_LIBRARY_PATH=bin bin/timer
 $ ./build.sh
 
 # run executables, for example:
-$ LD_LIBRARY_PATH=bin bin/timer
+$ LD_LIBRARY_PATH=bin bin/graph
 ```
 
 -------
