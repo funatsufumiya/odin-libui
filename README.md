@@ -1,6 +1,6 @@
-# V libui
+# odin-libui
 
-V libui-ng wrapper and examples. Tested on Win/Mac/Linux (Ubuntu).
+Odin language libui-ng wrapper. Tested on Win/Mac/Linux (Ubuntu).
 
 Forked from [v-libui](https://github.com/funatsufumiya/v-libui)
 
