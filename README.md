@@ -2,7 +2,7 @@
 
 V libui-ng wrapper and examples. Tested on Win/Mac/Linux (Ubuntu).
 
-Forked from [libui_examples](https://github.com/funatsufumiya/libui_examples)
+Forked from [v-libui](https://github.com/funatsufumiya/v-libui)
 
 Note that dynamic libraries are already placed in `bin`. These were prebuilt from [libui-ng/libui-ng](https://github.com/libui-ng/libui-ng).
 
