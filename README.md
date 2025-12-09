@@ -6,12 +6,6 @@ Forked from [v-libui](https://github.com/funatsufumiya/v-libui)
 
 Note that dynamic libraries are already placed in `bin`. These were prebuilt from [libui-ng/libui-ng](https://github.com/libui-ng/libui-ng).
 
-## Install (as a library)
-
-```bash
-$ git clone https://github.com/funatsufumiya/v-libui ~/.vmodules/libui
-```
-
 ## Examples (how to build and run)
 
 > [!NOTE]
