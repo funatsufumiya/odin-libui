@@ -13,5 +13,5 @@ mkdir bin 1>/dev/null 2>/dev/null
 # $CC -lui -I. -L bin -o "bin/minimal" "examples/minimal/main.c" 
 
 odin build "examples/minimal" -out:"bin/minimal"
-# v -enable-globals examples/timer/main.v -o bin/timer
+odin build "examples/timer" -out:"bin/timer"
 # v -enable-globals examples/calendar/main.v -o bin/calendar

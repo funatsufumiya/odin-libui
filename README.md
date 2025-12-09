@@ -9,11 +9,11 @@ Dynamic and static libraries are already placed in this repo. These were prebuil
 ## Examples (how to build and run)
 
 > [!NOTE]
-> Currently partial examples only translated into V
+> Currently partial examples only translated into Odin
 
-- [minimal](./examples/minimal/main.v)
-<!-- - [timer](./examples/timer/main.v) -->
-<!-- - [calendar](./examples/calendar/main.v) -->
+- [minimal](./examples/minimal/main.odin)
+- [timer](./examples/timer/main.odin)
+<!-- - [calendar](./examples/calendar/main.odin) -->
 
 ### Windows
 
