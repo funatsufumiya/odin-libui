@@ -8,14 +8,12 @@ Dynamic libraries are already placed in this repo. These were prebuilt from [lib
 
 ## Examples (how to build and run)
 
-> [!NOTE]
-> Currently partial examples only translated into Odin
-
 - [minimal](./examples/minimal/main.odin)
 - [timer](./examples/timer/main.odin)
 - [calendar](./examples/calendar/main.odin)
 - [graph](./examples/graph/main.odin)
 - [label](./examples/label/main.odin)
+- [widgets](./examples/widgets/main.odin)
 
 ### Windows
 
