@@ -4,6 +4,8 @@ V libui-ng wrapper and examples
 
 V lang libui examples, forked from [libui_examples](https://github.com/funatsufumiya/libui_examples)
 
+Note that dynamic libraries are already placed in `bin`. These were prebuilt from [libui-ng/libui-ng](https://github.com/libui-ng/libui-ng).
+
 ## Install (as a library)
 
 ```bash
