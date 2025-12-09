@@ -2,6 +2,8 @@
 
 Odin language libui-ng wrapper. Tested on Win/Mac/Linux (Ubuntu).
 
+![screenshots/basic_controls.png](screenshots/basic_controls.png)
+
 Forked from [v-libui](https://github.com/funatsufumiya/v-libui)
 
 Dynamic libraries are already placed in this repo. These were prebuilt from [libui-ng/libui-ng](https://github.com/libui-ng/libui-ng).
