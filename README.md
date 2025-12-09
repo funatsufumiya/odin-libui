@@ -1,4 +1,6 @@
-# libui examples V
+# V libui
+
+V libui-ng wrapper and examples
 
 > [!NOTE]
 > Currently have only [minimal example](./examples/minimal/main.v) and [timer example](./examples/timer/main.v) (Others are not translated into V lang)
