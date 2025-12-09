@@ -16,4 +16,4 @@ Try { mkdir bin -ErrorAction SilentlyContinue > $null } Catch {}
 odin build "examples/minimal" -out:"bin/minimal.exe"
 odin build "examples/timer" -out:"bin/timer.exe"
 odin build "examples/calendar" -out:"bin/calendar.exe"
-# v -enable-globals "examples/calendar/main.v" -o "bin/calendar.exe"
+odin build "examples/graph" -out:"bin/graph.exe"
