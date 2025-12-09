@@ -18,8 +18,8 @@ $ git clone https://github.com/funatsufumiya/v-libui ~/.vmodules/libui
 > Currently partial examples only translated into V
 
 - [minimal](./examples/minimal/main.v)
-- [timer](./examples/timer/main.v)
-- [calendar](./examples/calendar/main.v)
+<!-- - [timer](./examples/timer/main.v) -->
+<!-- - [calendar](./examples/calendar/main.v) -->
 
 ### Windows
 
