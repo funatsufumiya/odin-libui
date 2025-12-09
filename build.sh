@@ -14,4 +14,5 @@ mkdir bin 1>/dev/null 2>/dev/null
 
 odin build "examples/minimal" -out:"bin/minimal"
 odin build "examples/timer" -out:"bin/timer"
+odin build "examples/calendar" -out:"bin/calendar"
 # v -enable-globals examples/calendar/main.v -o bin/calendar

@@ -7,3 +7,6 @@ bin/*
 examples/**/*.dll
 examples/**/*.so
 examples/**/*.dylib
+/*.dll
+/*.so
+/*.dylib

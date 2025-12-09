@@ -13,7 +13,7 @@ Dynamic and static libraries are already placed in this repo. These were prebuil
 
 - [minimal](./examples/minimal/main.odin)
 - [timer](./examples/timer/main.odin)
-<!-- - [calendar](./examples/calendar/main.odin) -->
+- [calendar](./examples/calendar/main.odin) (WIP)
 
 ### Windows
 
