@@ -1,7 +1,7 @@
 # libui examples V
 
 > [!NOTE]
-> Currently have only [minimal example](./examples/minimal/main.v) (Others are not translated into V lang)
+> Currently have only [minimal example](./examples/minimal/main.v) and [timer example](./examples/timer/main.v) (Others are not translated into V lang)
 
 V lang libui examples, forked from [libui_examples](https://github.com/funatsufumiya/libui_examples)
 

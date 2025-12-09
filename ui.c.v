@@ -425,159 +425,159 @@ pub fn ui_new_window(title &i8, width int, height int, has_menubar int) &C.uiWin
 	return C.uiNewWindow(title, width, height, has_menubar)
 }
 
-pub fn C.uiButtonText(b C.uiButton) &i8
+pub fn C.uiButtonText(b &C.uiButton) &i8
 
-pub fn ui_button_text(b C.uiButton) &i8 {
+pub fn ui_button_text(b &C.uiButton) &i8 {
 	return C.uiButtonText(b)
 }
 
-pub fn C.uiButtonSetText(b C.uiButton, text &i8)
+pub fn C.uiButtonSetText(b &C.uiButton, text &i8)
 
-pub fn ui_button_set_text(b C.uiButton, text &i8) {
+pub fn ui_button_set_text(b &C.uiButton, text &i8) {
 	C.uiButtonSetText(b, text)
 }
 
-pub fn C.uiButtonOnClicked(b C.uiButton, f fn (C.uiButton, voidptr), data voidptr)
+pub fn C.uiButtonOnClicked(b &C.uiButton, f fn (&C.uiButton, voidptr), data voidptr)
 
-pub fn ui_button_on_clicked(b C.uiButton, f fn (C.uiButton, voidptr), data voidptr) {
+pub fn ui_button_on_clicked(b &C.uiButton, f fn (&C.uiButton, voidptr), data voidptr) {
 	C.uiButtonOnClicked(b, f, data)
 }
 
-pub fn C.uiNewButton(text &i8) C.uiButton
+pub fn C.uiNewButton(text &i8) &C.uiButton
 
-pub fn ui_new_button(text &i8) C.uiButton {
+pub fn ui_new_button(text &i8) &C.uiButton {
 	return C.uiNewButton(text)
 }
 
-pub fn C.uiBoxAppend(b C.uiBox, child &C.uiControl, stretchy int)
+pub fn C.uiBoxAppend(b &C.uiBox, child &C.uiControl, stretchy int)
 
-pub fn ui_box_append(b C.uiBox, child &C.uiControl, stretchy int) {
+pub fn ui_box_append(b &C.uiBox, child &C.uiControl, stretchy int) {
 	C.uiBoxAppend(b, child, stretchy)
 }
 
-pub fn C.uiBoxDelete(b C.uiBox, index int)
+pub fn C.uiBoxDelete(b &C.uiBox, index int)
 
-pub fn ui_box_delete(b C.uiBox, index int) {
+pub fn ui_box_delete(b &C.uiBox, index int) {
 	C.uiBoxDelete(b, index)
 }
 
-pub fn C.uiBoxPadded(b C.uiBox) int
+pub fn C.uiBoxPadded(b &C.uiBox) int
 
-pub fn ui_box_padded(b C.uiBox) int {
+pub fn ui_box_padded(b &C.uiBox) int {
 	return C.uiBoxPadded(b)
 }
 
-pub fn C.uiBoxSetPadded(b C.uiBox, padded int)
+pub fn C.uiBoxSetPadded(b &C.uiBox, padded int)
 
-pub fn ui_box_set_padded(b C.uiBox, padded int) {
+pub fn ui_box_set_padded(b &C.uiBox, padded int) {
 	C.uiBoxSetPadded(b, padded)
 }
 
-pub fn C.uiNewHorizontalBox() C.uiBox
+pub fn C.uiNewHorizontalBox() &C.uiBox
 
-pub fn ui_new_horizontal_box() C.uiBox {
+pub fn ui_new_horizontal_box() &C.uiBox {
 	return C.uiNewHorizontalBox()
 }
 
-pub fn C.uiNewVerticalBox() C.uiBox
+pub fn C.uiNewVerticalBox() &C.uiBox
 
-pub fn ui_new_vertical_box() C.uiBox {
+pub fn ui_new_vertical_box() &C.uiBox {
 	return C.uiNewVerticalBox()
 }
 
-pub fn C.uiCheckboxText(c C.uiCheckbox) &i8
+pub fn C.uiCheckboxText(c &C.uiCheckbox) &i8
 
-pub fn ui_checkbox_text(c C.uiCheckbox) &i8 {
+pub fn ui_checkbox_text(c &C.uiCheckbox) &i8 {
 	return C.uiCheckboxText(c)
 }
 
-pub fn C.uiCheckboxSetText(c C.uiCheckbox, text &i8)
+pub fn C.uiCheckboxSetText(c &C.uiCheckbox, text &i8)
 
-pub fn ui_checkbox_set_text(c C.uiCheckbox, text &i8) {
+pub fn ui_checkbox_set_text(c &C.uiCheckbox, text &i8) {
 	C.uiCheckboxSetText(c, text)
 }
 
-pub fn C.uiCheckboxOnToggled(c C.uiCheckbox, f fn (C.uiCheckbox, voidptr), data voidptr)
+pub fn C.uiCheckboxOnToggled(c &C.uiCheckbox, f fn (&C.uiCheckbox, voidptr), data voidptr)
 
-pub fn ui_checkbox_on_toggled(c C.uiCheckbox, f fn (C.uiCheckbox, voidptr), data voidptr) {
+pub fn ui_checkbox_on_toggled(c &C.uiCheckbox, f fn (&C.uiCheckbox, voidptr), data voidptr) {
 	C.uiCheckboxOnToggled(c, f, data)
 }
 
-pub fn C.uiCheckboxChecked(c C.uiCheckbox) int
+pub fn C.uiCheckboxChecked(c &C.uiCheckbox) int
 
-pub fn ui_checkbox_checked(c C.uiCheckbox) int {
+pub fn ui_checkbox_checked(c &C.uiCheckbox) int {
 	return C.uiCheckboxChecked(c)
 }
 
-pub fn C.uiCheckboxSetChecked(c C.uiCheckbox, checked int)
+pub fn C.uiCheckboxSetChecked(c &C.uiCheckbox, checked int)
 
-pub fn ui_checkbox_set_checked(c C.uiCheckbox, checked int) {
+pub fn ui_checkbox_set_checked(c &C.uiCheckbox, checked int) {
 	C.uiCheckboxSetChecked(c, checked)
 }
 
-pub fn C.uiNewCheckbox(text &i8) C.uiCheckbox
+pub fn C.uiNewCheckbox(text &i8) &C.uiCheckbox
 
-pub fn ui_new_checkbox(text &i8) C.uiCheckbox {
+pub fn ui_new_checkbox(text &i8) &C.uiCheckbox {
 	return C.uiNewCheckbox(text)
 }
 
-pub fn C.uiEntryText(e C.uiEntry) &i8
+pub fn C.uiEntryText(e &C.uiEntry) &i8
 
-pub fn ui_entry_text(e C.uiEntry) &i8 {
+pub fn ui_entry_text(e &C.uiEntry) &i8 {
 	return C.uiEntryText(e)
 }
 
-pub fn C.uiEntrySetText(e C.uiEntry, text &i8)
+pub fn C.uiEntrySetText(e &C.uiEntry, text &i8)
 
-pub fn ui_entry_set_text(e C.uiEntry, text &i8) {
+pub fn ui_entry_set_text(e &C.uiEntry, text &i8) {
 	C.uiEntrySetText(e, text)
 }
 
-pub fn C.uiEntryOnChanged(e C.uiEntry, f fn (C.uiEntry, voidptr), data voidptr)
+pub fn C.uiEntryOnChanged(e &C.uiEntry, f fn (&C.uiEntry, voidptr), data voidptr)
 
-pub fn ui_entry_on_changed(e C.uiEntry, f fn (C.uiEntry, voidptr), data voidptr) {
+pub fn ui_entry_on_changed(e &C.uiEntry, f fn (&C.uiEntry, voidptr), data voidptr) {
 	C.uiEntryOnChanged(e, f, data)
 }
 
-pub fn C.uiEntryReadOnly(e C.uiEntry) int
+pub fn C.uiEntryReadOnly(e &C.uiEntry) int
 
-pub fn ui_entry_read_only(e C.uiEntry) int {
+pub fn ui_entry_read_only(e &C.uiEntry) int {
 	return C.uiEntryReadOnly(e)
 }
 
-pub fn C.uiEntrySetReadOnly(e C.uiEntry, readonly int)
+pub fn C.uiEntrySetReadOnly(e &C.uiEntry, readonly int)
 
-pub fn ui_entry_set_read_only(e C.uiEntry, readonly int) {
+pub fn ui_entry_set_read_only(e &C.uiEntry, readonly int) {
 	C.uiEntrySetReadOnly(e, readonly)
 }
 
-pub fn C.uiNewEntry() C.uiEntry
+pub fn C.uiNewEntry() &C.uiEntry
 
-pub fn ui_new_entry() C.uiEntry {
+pub fn ui_new_entry() &C.uiEntry {
 	return C.uiNewEntry()
 }
 
-pub fn C.uiNewPasswordEntry() C.uiEntry
+pub fn C.uiNewPasswordEntry() &C.uiEntry
 
-pub fn ui_new_password_entry() C.uiEntry {
+pub fn ui_new_password_entry() &C.uiEntry {
 	return C.uiNewPasswordEntry()
 }
 
-pub fn C.uiNewSearchEntry() C.uiEntry
+pub fn C.uiNewSearchEntry() &C.uiEntry
 
-pub fn ui_new_search_entry() C.uiEntry {
+pub fn ui_new_search_entry() &C.uiEntry {
 	return C.uiNewSearchEntry()
 }
 
-pub fn C.uiLabelText(l C.uiLabel) &i8
+pub fn C.uiLabelText(l &C.uiLabel) &i8
 
-pub fn ui_label_text(l C.uiLabel) &i8 {
+pub fn ui_label_text(l &C.uiLabel) &i8 {
 	return C.uiLabelText(l)
 }
 
-pub fn C.uiLabelSetText(l C.uiLabel, text &i8)
+pub fn C.uiLabelSetText(l &C.uiLabel, text &i8)
 
-pub fn ui_label_set_text(l C.uiLabel, text &i8) {
+pub fn ui_label_set_text(l &C.uiLabel, text &i8) {
 	C.uiLabelSetText(l, text)
 }
 
@@ -879,39 +879,39 @@ pub fn ui_new_time_picker() C.uiDateTimePicker {
 }
 
 // TODO provide a facility for entering tab stops?
-pub fn C.uiMultilineEntryText(e C.uiMultilineEntry) &i8
+pub fn C.uiMultilineEntryText(e &C.uiMultilineEntry) &i8
 
-pub fn ui_multiline_entry_text(e C.uiMultilineEntry) &i8 {
+pub fn ui_multiline_entry_text(e &C.uiMultilineEntry) &i8 {
 	return C.uiMultilineEntryText(e)
 }
 
-pub fn C.uiMultilineEntrySetText(e C.uiMultilineEntry, text &i8)
+pub fn C.uiMultilineEntrySetText(e &C.uiMultilineEntry, text &i8)
 
-pub fn ui_multiline_entry_set_text(e C.uiMultilineEntry, text &i8) {
+pub fn ui_multiline_entry_set_text(e &C.uiMultilineEntry, text &i8) {
 	C.uiMultilineEntrySetText(e, text)
 }
 
-pub fn C.uiMultilineEntryAppend(e C.uiMultilineEntry, text &i8)
+pub fn C.uiMultilineEntryAppend(e &C.uiMultilineEntry, text &i8)
 
-pub fn ui_multiline_entry_append(e C.uiMultilineEntry, text &i8) {
+pub fn ui_multiline_entry_append(e &C.uiMultilineEntry, text &i8) {
 	C.uiMultilineEntryAppend(e, text)
 }
 
-pub fn C.uiMultilineEntryOnChanged(e C.uiMultilineEntry, f fn (C.uiMultilineEntry, voidptr), data voidptr)
+pub fn C.uiMultilineEntryOnChanged(e &C.uiMultilineEntry, f fn (&C.uiMultilineEntry, voidptr), data voidptr)
 
-pub fn ui_multiline_entry_on_changed(e C.uiMultilineEntry, f fn (C.uiMultilineEntry, voidptr), data voidptr) {
+pub fn ui_multiline_entry_on_changed(e &C.uiMultilineEntry, f fn (&C.uiMultilineEntry, voidptr), data voidptr) {
 	C.uiMultilineEntryOnChanged(e, f, data)
 }
 
-pub fn C.uiMultilineEntryReadOnly(e C.uiMultilineEntry) int
+pub fn C.uiMultilineEntryReadOnly(e &C.uiMultilineEntry) int
 
-pub fn ui_multiline_entry_read_only(e C.uiMultilineEntry) int {
+pub fn ui_multiline_entry_read_only(e &C.uiMultilineEntry) int {
 	return C.uiMultilineEntryReadOnly(e)
 }
 
-pub fn C.uiMultilineEntrySetReadOnly(e C.uiMultilineEntry, readonly int)
+pub fn C.uiMultilineEntrySetReadOnly(e &C.uiMultilineEntry, readonly int)
 
-pub fn ui_multiline_entry_set_read_only(e C.uiMultilineEntry, readonly int) {
+pub fn ui_multiline_entry_set_read_only(e &C.uiMultilineEntry, readonly int) {
 	C.uiMultilineEntrySetReadOnly(e, readonly)
 }
 
@@ -2441,29 +2441,30 @@ pub fn ui_table_value_color(v C.uiTableValue, r &f64, g &f64, b &f64, a &f64) {
 // calls when it needs data. Once a uiTableModel is created, these
 // methods cannot change.
 // TODO validate ranges; validate types on each getter/setter call (? table columns only?)
-pub struct UiTableModelHandler {
+@[typedef]
+pub struct C.uiTableModelHandler {
 	// NumColumns returns the number of model columns in the
 	// uiTableModel. This value must remain constant through the
 	// lifetime of the uiTableModel. This method is not guaranteed
 	// to be called depending on the system.
 	// TODO strongly check column numbers and types on all platforms so these clauses can go away
-	numColumns fn (C.uiTableModelHandler, C.uiTableModel) int
+	numColumns fn (&C.uiTableModelHandler, &C.uiTableModel) int
 	// ColumnType returns the value type of the data stored in
 	// the given model column of the uiTableModel. The returned
 	// values must remain constant through the lifetime of the
 	// uiTableModel. This method is not guaranteed to be called
 	// depending on the system.
-	columnType fn (C.uiTableModelHandler, C.uiTableModel, int) UiTableValueType
+	columnType fn (&C.uiTableModelHandler, &C.uiTableModel, int) C.uiTableValueType
 	// NumRows returns the number or rows in the uiTableModel.
 	// This value must be non-negative.
-	numRows fn (C.uiTableModelHandler, C.uiTableModel) int
+	numRows fn (&C.uiTableModelHandler, &C.uiTableModel) int
 	// CellValue returns a uiTableValue corresponding to the model
 	// cell at (row, column). The type of the returned uiTableValue
 	// must match column's value type. Under some circumstances,
 	// NULL may be returned; refer to the various methods that add
 	// columns to uiTable for details. Once returned, the uiTable
 	// that calls CellValue will free the uiTableValue returned.
-	cellValue fn (C.uiTableModelHandler, C.uiTableModel, int, int) C.uiTableValue
+	cellValue fn (&C.uiTableModelHandler, &C.uiTableModel, int, int) C.uiTableValue
 	// SetCellValue changes the model cell value at (row, column)
 	// in the uiTableModel. Within this function, either do nothing
 	// to keep the current cell value or save the new cell value as
@@ -2473,24 +2474,24 @@ pub struct UiTableModelHandler {
 	// methods that add columns to uiTable for details. Once
 	// returned, the uiTable that called SetCellValue will free the
 	// uiTableValue passed in.
-	setCellValue fn (C.uiTableModelHandler, C.uiTableModel, int, int, C.uiTableValue)
+	setCellValue fn (&C.uiTableModelHandler, &C.uiTableModel, int, int, &C.uiTableValue)
 }
 
 // @role uiTableModel constructor
 // uiNewTableModel() creates a new uiTableModel with the given
 // handler methods.
-pub fn C.uiNewTableModel(mh C.uiTableModelHandler) C.uiTableModel
+pub fn C.uiNewTableModel(mh &C.uiTableModelHandler) &C.uiTableModel
 
-pub fn ui_new_table_model(mh C.uiTableModelHandler) C.uiTableModel {
+pub fn ui_new_table_model(mh &C.uiTableModelHandler) &C.uiTableModel {
 	return C.uiNewTableModel(mh)
 }
 
 // @role uiTableModel destructor
 // uiFreeTableModel() frees the given table model. It is an error to
 // free table models currently associated with a uiTable.
-pub fn C.uiFreeTableModel(m C.uiTableModel)
+pub fn C.uiFreeTableModel(m &C.uiTableModel)
 
-pub fn ui_free_table_model(m C.uiTableModel) {
+pub fn ui_free_table_model(m &C.uiTableModel) {
 	C.uiFreeTableModel(m)
 }
 
@@ -2499,9 +2500,9 @@ pub fn ui_free_table_model(m C.uiTableModel) {
 // this function when the number of rows in your model has
 // changed; after calling it, NumRows() should returm the new row
 // count.
-pub fn C.uiTableModelRowInserted(m C.uiTableModel, new_index int)
+pub fn C.uiTableModelRowInserted(m &C.uiTableModel, new_index int)
 
-pub fn ui_table_model_row_inserted(m C.uiTableModel, new_index int) {
+pub fn ui_table_model_row_inserted(m &C.uiTableModel, new_index int) {
 	C.uiTableModelRowInserted(m, new_index)
 }
 
@@ -2509,9 +2510,9 @@ pub fn ui_table_model_row_inserted(m C.uiTableModel, new_index int) {
 // that the data in the row at index has changed. You do not need to
 // call this in your SetCellValue() handlers, but you do need to call
 // this if your data changes at some other point.
-pub fn C.uiTableModelRowChanged(m C.uiTableModel, index int)
+pub fn C.uiTableModelRowChanged(m &C.uiTableModel, index int)
 
-pub fn ui_table_model_row_changed(m C.uiTableModel, index int) {
+pub fn ui_table_model_row_changed(m &C.uiTableModel, index int) {
 	C.uiTableModelRowChanged(m, index)
 }
 
@@ -2521,9 +2522,9 @@ pub fn ui_table_model_row_changed(m C.uiTableModel, index int) {
 // after calling it, NumRows() should returm the new row
 // count.
 // TODO for this and Inserted: make sure the "after" part is right; clarify if it's after returning or after calling
-pub fn C.uiTableModelRowDeleted(m C.uiTableModel, old_index int)
+pub fn C.uiTableModelRowDeleted(m &C.uiTableModel, old_index int)
 
-pub fn ui_table_model_row_deleted(m C.uiTableModel, old_index int) {
+pub fn ui_table_model_row_deleted(m &C.uiTableModel, old_index int) {
 	C.uiTableModelRowDeleted(m, old_index)
 }
 
@@ -2536,7 +2537,8 @@ pub fn ui_table_model_row_deleted(m C.uiTableModel, old_index int) {
 // uiTableTextColumnOptionalParams are the optional parameters
 // that control the appearance of the text column of a uiTable.
 // uiTableParams defines the parameters passed to uiNewTable().
-pub struct UiTableTextColumnOptionalParams {
+@[typedef]
+pub struct C.uiTableTextColumnOptionalParams {
 	// ColorModelColumn is the model column containing the
 	// text color of this uiTable column's text, or -1 to use the
 	// default color.
@@ -2546,10 +2548,11 @@ pub struct UiTableTextColumnOptionalParams {
 	colorModelColumn int
 }
 
-pub struct UiTableParams {
+@[typedef]
+pub struct C.uiTableParams {
 	// Model is the uiTableModel to use for this uiTable.
 	// This parameter cannot be NULL.
-	model C.uiTableModel
+	model &C.uiTableModel
 	// RowBackgroundColorModelColumn is a model column
 	// number that defines the background color used for the
 	// entire row in the uiTable, or -1 to use the default color for
@@ -2567,28 +2570,28 @@ pub struct UiTableParams {
 // textModelColumn is where the text comes from.
 // If a row is editable according to textEditableModelColumn,
 // SetCellValue() is called with textModelColumn as the column.
-pub fn C.uiTableAppendTextColumn(t C.uiTable, name &i8, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
+pub fn C.uiTableAppendTextColumn(l &C.uiTable, name &i8, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
 
-pub fn ui_table_append_text_column(t C.uiTable, name &i8, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
-	C.uiTableAppendTextColumn(t, name, text_model_column, text_editable_model_column,
+pub fn ui_table_append_text_column(l &C.uiTable, name &i8, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
+	C.uiTableAppendTextColumn(l, name, text_model_column, text_editable_model_column,
 		text_params)
 }
 
 // uiTableAppendImageColumn() appends an image column to t.
 // Images are drawn at icon size, appropriate to the pixel density
 // of the screen showing the uiTable.
-pub fn C.uiTableAppendImageColumn(t C.uiTable, name &i8, image_model_column int)
+pub fn C.uiTableAppendImageColumn(l &C.uiTable, name &i8, image_model_column int)
 
-pub fn ui_table_append_image_column(t C.uiTable, name &i8, image_model_column int) {
-	C.uiTableAppendImageColumn(t, name, image_model_column)
+pub fn ui_table_append_image_column(l &C.uiTable, name &i8, image_model_column int) {
+	C.uiTableAppendImageColumn(l, name, image_model_column)
 }
 
 // uiTableAppendImageTextColumn() appends a column to t that
 // shows both an image and text.
-pub fn C.uiTableAppendImageTextColumn(t C.uiTable, name &i8, image_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
+pub fn C.uiTableAppendImageTextColumn(l &C.uiTable, name &i8, image_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
 
-pub fn ui_table_append_image_text_column(t C.uiTable, name &i8, image_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
-	C.uiTableAppendImageTextColumn(t, name, image_model_column, text_model_column, text_editable_model_column,
+pub fn ui_table_append_image_text_column(l &C.uiTable, name &i8, image_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
+	C.uiTableAppendImageTextColumn(l, name, image_model_column, text_model_column, text_editable_model_column,
 		text_params)
 }
 
@@ -2596,18 +2599,18 @@ pub fn ui_table_append_image_text_column(t C.uiTable, name &i8, image_model_colu
 // contains a checkbox that the user can interact with (assuming the
 // checkbox is editable). SetCellValue() will be called with
 // checkboxModelColumn as the column in this case.
-pub fn C.uiTableAppendCheckboxColumn(t C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int)
+pub fn C.uiTableAppendCheckboxColumn(l &C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int)
 
-pub fn ui_table_append_checkbox_column(t C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int) {
-	C.uiTableAppendCheckboxColumn(t, name, checkbox_model_column, checkbox_editable_model_column)
+pub fn ui_table_append_checkbox_column(l &C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int) {
+	C.uiTableAppendCheckboxColumn(l, name, checkbox_model_column, checkbox_editable_model_column)
 }
 
 // uiTableAppendCheckboxTextColumn() appends a column to t
 // that contains both a checkbox and text.
-pub fn C.uiTableAppendCheckboxTextColumn(t C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
+pub fn C.uiTableAppendCheckboxTextColumn(l &C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
 
-pub fn ui_table_append_checkbox_text_column(t C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
-	C.uiTableAppendCheckboxTextColumn(t, name, checkbox_model_column, checkbox_editable_model_column,
+pub fn ui_table_append_checkbox_text_column(l &C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
+	C.uiTableAppendCheckboxTextColumn(l, name, checkbox_model_column, checkbox_editable_model_column,
 		text_model_column, text_editable_model_column, text_params)
 }
 
@@ -2615,10 +2618,10 @@ pub fn ui_table_append_checkbox_text_column(t C.uiTable, name &i8, checkbox_mode
 // that displays a progress bar. These columns work like
 // uiProgressBar: a cell value of 0..100 displays that percentage, and
 // a cell value of -1 displays an indeterminate progress bar.
-pub fn C.uiTableAppendProgressBarColumn(t C.uiTable, name &i8, progress_model_column int)
+pub fn C.uiTableAppendProgressBarColumn(l &C.uiTable, name &i8, progress_model_column int)
 
-pub fn ui_table_append_progress_bar_column(t C.uiTable, name &i8, progress_model_column int) {
-	C.uiTableAppendProgressBarColumn(t, name, progress_model_column)
+pub fn ui_table_append_progress_bar_column(l &C.uiTable, name &i8, progress_model_column int) {
+	C.uiTableAppendProgressBarColumn(l, name, progress_model_column)
 }
 
 // uiTableAppendButtonColumn() appends a column to t
@@ -2627,10 +2630,10 @@ pub fn ui_table_append_progress_bar_column(t C.uiTable, name &i8, progress_model
 // value and buttonModelColumn as the column.
 // CellValue() on buttonModelColumn should return the text to show
 // in the button.
-pub fn C.uiTableAppendButtonColumn(t C.uiTable, name &i8, button_model_column int, button_clickable_model_column int)
+pub fn C.uiTableAppendButtonColumn(l &C.uiTable, name &i8, button_model_column int, button_clickable_model_column int)
 
-pub fn ui_table_append_button_column(t C.uiTable, name &i8, button_model_column int, button_clickable_model_column int) {
-	C.uiTableAppendButtonColumn(t, name, button_model_column, button_clickable_model_column)
+pub fn ui_table_append_button_column(l &C.uiTable, name &i8, button_model_column int, button_clickable_model_column int) {
+	C.uiTableAppendButtonColumn(l, name, button_model_column, button_clickable_model_column)
 }
 
 // uiNewTable() creates a new uiTable with the specified parameters.

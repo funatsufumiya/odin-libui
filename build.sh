@@ -13,3 +13,4 @@ mkdir bin
 # $CC -lui -I. -L bin -o "bin/minimal" "examples/minimal/main.c" 
 
 v examples/minimal/main.v -o bin/minimal
+v -enable-globals examples/timer/main.v -o bin/timer

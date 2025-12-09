@@ -9,3 +9,4 @@ mkdir bin
 @REM %tcc% -llibui -L%CD% -o "%CD%/bin/minimal.exe" "%CD%/examples/minimal/main.c" 
 
 v %CD%/examples/minimal/main.v -o bin/minimal.exe
+v -enable-globals %CD%/examples/timer/main.v -o bin/timer.exe
