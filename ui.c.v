@@ -587,39 +587,39 @@ pub fn ui_new_label(text &i8) &C.uiLabel {
 	return C.uiNewLabel(text)
 }
 
-pub fn C.uiTabAppend(t C.uiTab, name &i8, c &C.uiControl)
+pub fn C.uiTabAppend(t &C.uiTab, name &i8, c &C.uiControl)
 
-pub fn ui_tab_append(t C.uiTab, name &i8, c &C.uiControl) {
+pub fn ui_tab_append(t &C.uiTab, name &i8, c &C.uiControl) {
 	C.uiTabAppend(t, name, c)
 }
 
-pub fn C.uiTabInsertAt(t C.uiTab, name &i8, before int, c &C.uiControl)
+pub fn C.uiTabInsertAt(t &C.uiTab, name &i8, before int, c &C.uiControl)
 
-pub fn ui_tab_insert_at(t C.uiTab, name &i8, before int, c &C.uiControl) {
+pub fn ui_tab_insert_at(t &C.uiTab, name &i8, before int, c &C.uiControl) {
 	C.uiTabInsertAt(t, name, before, c)
 }
 
-pub fn C.uiTabDelete(t C.uiTab, index int)
+pub fn C.uiTabDelete(t &C.uiTab, index int)
 
-pub fn ui_tab_delete(t C.uiTab, index int) {
+pub fn ui_tab_delete(t &C.uiTab, index int) {
 	C.uiTabDelete(t, index)
 }
 
-pub fn C.uiTabNumPages(t C.uiTab) int
+pub fn C.uiTabNumPages(t &C.uiTab) int
 
-pub fn ui_tab_num_pages(t C.uiTab) int {
+pub fn ui_tab_num_pages(t &C.uiTab) int {
 	return C.uiTabNumPages(t)
 }
 
-pub fn C.uiTabMargined(t C.uiTab, page int) int
+pub fn C.uiTabMargined(t &C.uiTab, page int) int
 
-pub fn ui_tab_margined(t C.uiTab, page int) int {
+pub fn ui_tab_margined(t &C.uiTab, page int) int {
 	return C.uiTabMargined(t, page)
 }
 
-pub fn C.uiTabSetMargined(t C.uiTab, page int, margined int)
+pub fn C.uiTabSetMargined(t &C.uiTab, page int, margined int)
 
-pub fn ui_tab_set_margined(t C.uiTab, page int, margined int) {
+pub fn ui_tab_set_margined(t &C.uiTab, page int, margined int) {
 	C.uiTabSetMargined(t, page, margined)
 }
 
@@ -1830,49 +1830,49 @@ pub fn ui_attribute_features(a &C.uiAttribute) &C.uiOpenTypeFeatures {
 // invoked by uiAttributedStringForEachAttribute() for every
 // attribute in s. Refer to that function's documentation for more
 // details.
-pub type UiAttributedStringForEachAttributeFunc = fn (C.uiAttributedString, C.uiAttribute, usize, usize, voidptr) C.uiForEach
+pub type UiAttributedStringForEachAttributeFunc = fn (&C.uiAttributedString, &C.uiAttribute, usize, usize, voidptr) C.uiForEach
 
 // @role uiAttributedString constructor
 // uiNewAttributedString() creates a new uiAttributedString from
 // initialString. The string will be entirely unattributed.
-pub fn C.uiNewAttributedString(initial_string &i8) C.uiAttributedString
+pub fn C.uiNewAttributedString(initial_string &i8) &C.uiAttributedString
 
-pub fn ui_new_attributed_string(initial_string &i8) C.uiAttributedString {
+pub fn ui_new_attributed_string(initial_string &i8) &C.uiAttributedString {
 	return C.uiNewAttributedString(initial_string)
 }
 
 // @role uiAttributedString destructor
 // uiFreeAttributedString() destroys the uiAttributedString s.
 // It will also free all uiAttributes within.
-pub fn C.uiFreeAttributedString(s C.uiAttributedString)
+pub fn C.uiFreeAttributedString(s &C.uiAttributedString)
 
-pub fn ui_free_attributed_string(s C.uiAttributedString) {
+pub fn ui_free_attributed_string(s &C.uiAttributedString) {
 	C.uiFreeAttributedString(s)
 }
 
 // uiAttributedStringString() returns the textual content of s as a
 // '\0'-terminated UTF-8 string. The returned pointer is valid until
 // the next change to the textual content of s.
-pub fn C.uiAttributedStringString(s C.uiAttributedString) &i8
+pub fn C.uiAttributedStringString(s &C.uiAttributedString) &i8
 
-pub fn ui_attributed_string_string(s C.uiAttributedString) &i8 {
+pub fn ui_attributed_string_string(s &C.uiAttributedString) &i8 {
 	return C.uiAttributedStringString(s)
 }
 
 // uiAttributedStringLength() returns the number of UTF-8 bytes in
 // the textual content of s, excluding the terminating '\0'.
-pub fn C.uiAttributedStringLen(s C.uiAttributedString) usize
+pub fn C.uiAttributedStringLen(s &C.uiAttributedString) usize
 
-pub fn ui_attributed_string_len(s C.uiAttributedString) usize {
+pub fn ui_attributed_string_len(s &C.uiAttributedString) usize {
 	return C.uiAttributedStringLen(s)
 }
 
 // uiAttributedStringAppendUnattributed() adds the '\0'-terminated
 // UTF-8 string str to the end of s. The new substring will be
 // unattributed.
-pub fn C.uiAttributedStringAppendUnattributed(s C.uiAttributedString, str &i8)
+pub fn C.uiAttributedStringAppendUnattributed(s &C.uiAttributedString, str &i8)
 
-pub fn ui_attributed_string_append_unattributed(s C.uiAttributedString, str &i8) {
+pub fn ui_attributed_string_append_unattributed(s &C.uiAttributedString, str &i8) {
 	C.uiAttributedStringAppendUnattributed(s, str)
 }
 
@@ -1880,9 +1880,9 @@ pub fn ui_attributed_string_append_unattributed(s C.uiAttributedString, str &i8)
 // UTF-8 string str to s at the byte position specified by at. The new
 // substring will be unattributed; existing attributes will be moved
 // along with their text.
-pub fn C.uiAttributedStringInsertAtUnattributed(s C.uiAttributedString, str &i8, at usize)
+pub fn C.uiAttributedStringInsertAtUnattributed(s &C.uiAttributedString, str &i8, at usize)
 
-pub fn ui_attributed_string_insert_at_unattributed(s C.uiAttributedString, str &i8, at usize) {
+pub fn ui_attributed_string_insert_at_unattributed(s &C.uiAttributedString, str &i8, at usize) {
 	C.uiAttributedStringInsertAtUnattributed(s, str, at)
 }
 
@@ -1890,9 +1890,9 @@ pub fn ui_attributed_string_insert_at_unattributed(s C.uiAttributedString, str &
 // TODO and add functions that take a string + length
 // uiAttributedStringDelete() deletes the characters and attributes of
 // s in the byte range [start, end).
-pub fn C.uiAttributedStringDelete(s C.uiAttributedString, start usize, end usize)
+pub fn C.uiAttributedStringDelete(s &C.uiAttributedString, start usize, end usize)
 
-pub fn ui_attributed_string_delete(s C.uiAttributedString, start usize, end usize) {
+pub fn ui_attributed_string_delete(s &C.uiAttributedString, start usize, end usize) {
 	C.uiAttributedStringDelete(s, start, end)
 }
 
@@ -1901,9 +1901,9 @@ pub fn ui_attributed_string_delete(s C.uiAttributedString, start usize, end usiz
 // of s. Any existing attributes in that byte range of the same type are
 // removed. s takes ownership of a; you should not use it after
 // uiAttributedStringSetAttribute() returns.
-pub fn C.uiAttributedStringSetAttribute(s C.uiAttributedString, a &C.uiAttribute, start usize, end usize)
+pub fn C.uiAttributedStringSetAttribute(s &C.uiAttributedString, a &C.uiAttribute, start usize, end usize)
 
-pub fn ui_attributed_string_set_attribute(s C.uiAttributedString, a &C.uiAttribute, start usize, end usize) {
+pub fn ui_attributed_string_set_attribute(s &C.uiAttributedString, a &C.uiAttribute, start usize, end usize) {
 	C.uiAttributedStringSetAttribute(s, a, start, end)
 }
 
@@ -1913,30 +1913,30 @@ pub fn ui_attributed_string_set_attribute(s C.uiAttributedString, a &C.uiAttribu
 // use.
 // TODO reword the above for consistency (TODO and find out what I meant by that)
 // TODO define an enumeration order (or mark it as undefined); also define how consecutive runs of identical attributes are handled here and sync with the definition of uiAttributedString itself
-pub fn C.uiAttributedStringForEachAttribute(s C.uiAttributedString, f UiAttributedStringForEachAttributeFunc, data voidptr)
+pub fn C.uiAttributedStringForEachAttribute(s &C.uiAttributedString, f UiAttributedStringForEachAttributeFunc, data voidptr)
 
-pub fn ui_attributed_string_for_each_attribute(s C.uiAttributedString, f UiAttributedStringForEachAttributeFunc, data voidptr) {
+pub fn ui_attributed_string_for_each_attribute(s &C.uiAttributedString, f UiAttributedStringForEachAttributeFunc, data voidptr) {
 	C.uiAttributedStringForEachAttribute(s, f, data)
 }
 
 // TODO const correct this somehow (the implementation needs to mutate the structure)
-pub fn C.uiAttributedStringNumGraphemes(s C.uiAttributedString) usize
+pub fn C.uiAttributedStringNumGraphemes(s &C.uiAttributedString) usize
 
-pub fn ui_attributed_string_num_graphemes(s C.uiAttributedString) usize {
+pub fn ui_attributed_string_num_graphemes(s &C.uiAttributedString) usize {
 	return C.uiAttributedStringNumGraphemes(s)
 }
 
 // TODO const correct this somehow (the implementation needs to mutate the structure)
-pub fn C.uiAttributedStringByteIndexToGrapheme(s C.uiAttributedString, pos usize) usize
+pub fn C.uiAttributedStringByteIndexToGrapheme(s &C.uiAttributedString, pos usize) usize
 
-pub fn ui_attributed_string_byte_index_to_grapheme(s C.uiAttributedString, pos usize) usize {
+pub fn ui_attributed_string_byte_index_to_grapheme(s &C.uiAttributedString, pos usize) usize {
 	return C.uiAttributedStringByteIndexToGrapheme(s, pos)
 }
 
 // TODO const correct this somehow (the implementation needs to mutate the structure)
-pub fn C.uiAttributedStringGraphemeToByteIndex(s C.uiAttributedString, pos usize) usize
+pub fn C.uiAttributedStringGraphemeToByteIndex(s &C.uiAttributedString, pos usize) usize
 
-pub fn ui_attributed_string_grapheme_to_byte_index(s C.uiAttributedString, pos usize) usize {
+pub fn ui_attributed_string_grapheme_to_byte_index(s &C.uiAttributedString, pos usize) usize {
 	return C.uiAttributedStringGraphemeToByteIndex(s, pos)
 }
 
@@ -1999,9 +1999,9 @@ pub struct UiDrawTextLayoutParams {
 // 	- uiDrawTextLayoutRangeForSize() (returns what substring would fit in a given size)
 // 	- uiDrawTextLayoutNewWithHeight() (limits amount of string used by the height)
 // - some function to fix up a range (for text editing)
-pub fn C.uiDrawNewTextLayout(params &C.uiDrawTextLayoutParams) C.uiDrawTextLayout
+pub fn C.uiDrawNewTextLayout(params &C.uiDrawTextLayoutParams) &C.uiDrawTextLayout
 
-pub fn ui_draw_new_text_layout(params &C.uiDrawTextLayoutParams) C.uiDrawTextLayout {
+pub fn ui_draw_new_text_layout(params &C.uiDrawTextLayoutParams) &C.uiDrawTextLayout {
 	return C.uiDrawNewTextLayout(params)
 }
 
@@ -2039,33 +2039,33 @@ pub fn ui_draw_text_layout_extents(tl &C.uiDrawTextLayout, width &f64, height &f
 // uiFontButtonFont() allocates resources in desc; when you are done with the font, call uiFreeFontButtonFont() to release them.
 // uiFontButtonFont() does not allocate desc itself; you must do so.
 // TODO have a function that sets an entire font descriptor to a range in a uiAttributedString at once, for SetFont?
-pub fn C.uiFontButtonFont(b C.uiFontButton, desc C.uiFontDescriptor)
+pub fn C.uiFontButtonFont(b &C.uiFontButton, desc &C.uiFontDescriptor)
 
-pub fn ui_font_button_font(b C.uiFontButton, desc C.uiFontDescriptor) {
+pub fn ui_font_button_font(b &C.uiFontButton, desc &C.uiFontDescriptor) {
 	C.uiFontButtonFont(b, desc)
 }
 
 // TOOD SetFont, mechanics
 // uiFontButtonOnChanged() sets the function that is called when the font in the uiFontButton is changed.
-pub fn C.uiFontButtonOnChanged(b C.uiFontButton, f fn (C.uiFontButton, voidptr), data voidptr)
+pub fn C.uiFontButtonOnChanged(b &C.uiFontButton, f fn (&C.uiFontButton, voidptr), data voidptr)
 
-pub fn ui_font_button_on_changed(b C.uiFontButton, f fn (C.uiFontButton, voidptr), data voidptr) {
+pub fn ui_font_button_on_changed(b &C.uiFontButton, f fn (&C.uiFontButton, voidptr), data voidptr) {
 	C.uiFontButtonOnChanged(b, f, data)
 }
 
 // uiNewFontButton() creates a new uiFontButton. The default font selected into the uiFontButton is OS-defined.
-pub fn C.uiNewFontButton() C.uiFontButton
+pub fn C.uiNewFontButton() &C.uiFontButton
 
-pub fn ui_new_font_button() C.uiFontButton {
+pub fn ui_new_font_button() &C.uiFontButton {
 	return C.uiNewFontButton()
 }
 
 // uiFreeFontButtonFont() frees resources allocated in desc by uiFontButtonFont().
 // After calling uiFreeFontButtonFont(), the contents of desc should be assumed to be undefined (though since you allocate desc itself, you can safely reuse desc for other font descriptors).
 // Calling uiFreeFontButtonFont() on a uiFontDescriptor not returned by uiFontButtonFont() results in undefined behavior.
-pub fn C.uiFreeFontButtonFont(desc C.uiFontDescriptor)
+pub fn C.uiFreeFontButtonFont(desc &C.uiFontDescriptor)
 
-pub fn ui_free_font_button_font(desc C.uiFontDescriptor) {
+pub fn ui_free_font_button_font(desc &C.uiFontDescriptor) {
 	C.uiFreeFontButtonFont(desc)
 }
 
@@ -2145,57 +2145,57 @@ pub struct UiAreaKeyEvent {
 	up        int
 }
 
-pub fn C.uiColorButtonColor(b C.uiColorButton, r &f64, g &f64, bl &f64, a &f64)
+pub fn C.uiColorButtonColor(b &C.uiColorButton, r &f64, g &f64, bl &f64, a &f64)
 
-pub fn ui_color_button_color(b C.uiColorButton, r &f64, g &f64, bl &f64, a &f64) {
+pub fn ui_color_button_color(b &C.uiColorButton, r &f64, g &f64, bl &f64, a &f64) {
 	C.uiColorButtonColor(b, r, g, bl, a)
 }
 
-pub fn C.uiColorButtonSetColor(b C.uiColorButton, r f64, g f64, bl f64, a f64)
+pub fn C.uiColorButtonSetColor(b &C.uiColorButton, r f64, g f64, bl f64, a f64)
 
-pub fn ui_color_button_set_color(b C.uiColorButton, r f64, g f64, bl f64, a f64) {
+pub fn ui_color_button_set_color(b &C.uiColorButton, r f64, g f64, bl f64, a f64) {
 	C.uiColorButtonSetColor(b, r, g, bl, a)
 }
 
-pub fn C.uiColorButtonOnChanged(b C.uiColorButton, f fn (C.uiColorButton, voidptr), data voidptr)
+pub fn C.uiColorButtonOnChanged(b &C.uiColorButton, f fn (&C.uiColorButton, voidptr), data voidptr)
 
-pub fn ui_color_button_on_changed(b C.uiColorButton, f fn (C.uiColorButton, voidptr), data voidptr) {
+pub fn ui_color_button_on_changed(b &C.uiColorButton, f fn (&C.uiColorButton, voidptr), data voidptr) {
 	C.uiColorButtonOnChanged(b, f, data)
 }
 
-pub fn C.uiNewColorButton() C.uiColorButton
+pub fn C.uiNewColorButton() &C.uiColorButton
 
-pub fn ui_new_color_button() C.uiColorButton {
+pub fn ui_new_color_button() &C.uiColorButton {
 	return C.uiNewColorButton()
 }
 
-pub fn C.uiFormAppend(f C.uiForm, label &i8, c &C.uiControl, stretchy int)
+pub fn C.uiFormAppend(f &C.uiForm, label &i8, c &C.uiControl, stretchy int)
 
-pub fn ui_form_append(f C.uiForm, label &i8, c &C.uiControl, stretchy int) {
+pub fn ui_form_append(f &C.uiForm, label &i8, c &C.uiControl, stretchy int) {
 	C.uiFormAppend(f, label, c, stretchy)
 }
 
-pub fn C.uiFormDelete(f C.uiForm, index int)
+pub fn C.uiFormDelete(f &C.uiForm, index int)
 
-pub fn ui_form_delete(f C.uiForm, index int) {
+pub fn ui_form_delete(f &C.uiForm, index int) {
 	C.uiFormDelete(f, index)
 }
 
-pub fn C.uiFormPadded(f C.uiForm) int
+pub fn C.uiFormPadded(f &C.uiForm) int
 
-pub fn ui_form_padded(f C.uiForm) int {
+pub fn ui_form_padded(f &C.uiForm) int {
 	return C.uiFormPadded(f)
 }
 
-pub fn C.uiFormSetPadded(f C.uiForm, padded int)
+pub fn C.uiFormSetPadded(f &C.uiForm, padded int)
 
-pub fn ui_form_set_padded(f C.uiForm, padded int) {
+pub fn ui_form_set_padded(f &C.uiForm, padded int) {
 	C.uiFormSetPadded(f, padded)
 }
 
-pub fn C.uiNewForm() C.uiForm
+pub fn C.uiNewForm() &C.uiForm
 
-pub fn ui_new_form() C.uiForm {
+pub fn ui_new_form() &C.uiForm {
 	return C.uiNewForm()
 }
 
@@ -2277,9 +2277,9 @@ pub fn ui_new_image(width f64, height f64) &C.uiImage {
 
 // @role uiImage destructor
 // uiFreeImage frees the given image and all associated resources.
-pub fn C.uiFreeImage(i C.uiImage)
+pub fn C.uiFreeImage(i &C.uiImage)
 
-pub fn ui_free_image(i C.uiImage) {
+pub fn ui_free_image(i &C.uiImage) {
 	C.uiFreeImage(i)
 }
 
@@ -2291,9 +2291,9 @@ pub fn ui_free_image(i C.uiImage) {
 // the number *of bytes* per row of the pixels array. Therefore,
 // pixels itself must be at least byteStride * pixelHeight bytes long.
 // TODO see if we either need the stride or can provide a way to get the OS-preferred stride (in cairo we do)
-pub fn C.uiImageAppend(i C.uiImage, pixels voidptr, pixel_width int, pixel_height int, byte_stride int)
+pub fn C.uiImageAppend(i &C.uiImage, pixels voidptr, pixel_width int, pixel_height int, byte_stride int)
 
-pub fn ui_image_append(i C.uiImage, pixels voidptr, pixel_width int, pixel_height int, byte_stride int) {
+pub fn ui_image_append(i &C.uiImage, pixels voidptr, pixel_width int, pixel_height int, byte_stride int) {
 	C.uiImageAppend(i, pixels, pixel_width, pixel_height, byte_stride)
 }
 
@@ -2315,9 +2315,9 @@ pub fn ui_image_append(i C.uiImage, pixels voidptr, pixel_width int, pixel_heigh
 // however, if you created a uiTableValue that you aren't going to
 // use later, or if you called a uiTableModelHandler method directly
 // and thus never transferred ownership of the uiTableValue.
-pub fn C.uiFreeTableValue(v C.uiTableValue)
+pub fn C.uiFreeTableValue(v &C.uiTableValue)
 
-pub fn ui_free_table_value(v C.uiTableValue) {
+pub fn ui_free_table_value(v &C.uiTableValue) {
 	C.uiFreeTableValue(v)
 }
 
@@ -2335,27 +2335,27 @@ const ui_table_value_type_color = 3
 
 // uiTableValueGetType() returns the type of v.
 // TODO I don't like this name
-pub fn C.uiTableValueGetType(v C.uiTableValue) UiTableValueType
+pub fn C.uiTableValueGetType(v &C.uiTableValue) UiTableValueType
 
-pub fn ui_table_value_get_type(v C.uiTableValue) UiTableValueType {
+pub fn ui_table_value_get_type(v &C.uiTableValue) UiTableValueType {
 	return C.uiTableValueGetType(v)
 }
 
 // uiNewTableValueString() returns a new uiTableValue that contains
 // str. str is copied; you do not need to keep it alive after
 // uiNewTableValueString() returns.
-pub fn C.uiNewTableValueString(str &i8) C.uiTableValue
+pub fn C.uiNewTableValueString(str &i8) &C.uiTableValue
 
-pub fn ui_new_table_value_string(str &i8) C.uiTableValue {
+pub fn ui_new_table_value_string(str &i8) &C.uiTableValue {
 	return C.uiNewTableValueString(str)
 }
 
 // uiTableValueString() returns the string stored in v. The returned
 // string is owned by v. It is an error to call this on a uiTableValue
 // that does not hold a string.
-pub fn C.uiTableValueString(v C.uiTableValue) &i8
+pub fn C.uiTableValueString(v &C.uiTableValue) &i8
 
-pub fn ui_table_value_string(v C.uiTableValue) &i8 {
+pub fn ui_table_value_string(v &C.uiTableValue) &i8 {
 	return C.uiTableValueString(v)
 }
 
@@ -2369,9 +2369,9 @@ pub fn ui_table_value_string(v C.uiTableValue) &i8 {
 // As a general rule, if libui calls a uiTableModelHandler method, the
 // uiImage is safe to free once any of your code is once again
 // executed.
-pub fn C.uiNewTableValueImage(img C.uiImage) C.uiTableValue
+pub fn C.uiNewTableValueImage(img &C.uiImage) &C.uiTableValue
 
-pub fn ui_new_table_value_image(img C.uiImage) C.uiTableValue {
+pub fn ui_new_table_value_image(img &C.uiImage) &C.uiTableValue {
 	return C.uiNewTableValueImage(img)
 }
 
@@ -2380,9 +2380,9 @@ pub fn ui_new_table_value_image(img C.uiImage) C.uiTableValue {
 // about the lifetime of the image (unless you created the image,
 // and thus control its lifetime). It is an error to call this on a
 // uiTableValue that does not hold an image.
-pub fn C.uiTableValueImage(v C.uiTableValue) &C.uiImage
+pub fn C.uiTableValueImage(v &C.uiTableValue) &C.uiImage
 
-pub fn ui_table_value_image(v C.uiTableValue) &C.uiImage {
+pub fn ui_table_value_image(v &C.uiTableValue) &C.uiImage {
 	return C.uiTableValueImage(v)
 }
 
@@ -2390,34 +2390,34 @@ pub fn ui_table_value_image(v C.uiTableValue) &C.uiImage {
 // int. This can be used both for boolean values (nonzero is true, as
 // in C) or progresses (in which case the valid range is -1..100
 // inclusive).
-pub fn C.uiNewTableValueInt(i int) C.uiTableValue
+pub fn C.uiNewTableValueInt(i int) &C.uiTableValue
 
-pub fn ui_new_table_value_int(i int) C.uiTableValue {
+pub fn ui_new_table_value_int(i int) &C.uiTableValue {
 	return C.uiNewTableValueInt(i)
 }
 
 // uiTableValueInt() returns the int stored in v. It is an error to call
 // this on a uiTableValue that does not store an int.
-pub fn C.uiTableValueInt(v C.uiTableValue) int
+pub fn C.uiTableValueInt(v &C.uiTableValue) int
 
-pub fn ui_table_value_int(v C.uiTableValue) int {
+pub fn ui_table_value_int(v &C.uiTableValue) int {
 	return C.uiTableValueInt(v)
 }
 
 // uiNewTableValueColor() returns a uiTableValue that stores the
 // given color.
-pub fn C.uiNewTableValueColor(r f64, g f64, b f64, a f64) C.uiTableValue
+pub fn C.uiNewTableValueColor(r f64, g f64, b f64, a f64) &C.uiTableValue
 
-pub fn ui_new_table_value_color(r f64, g f64, b f64, a f64) C.uiTableValue {
+pub fn ui_new_table_value_color(r f64, g f64, b f64, a f64) &C.uiTableValue {
 	return C.uiNewTableValueColor(r, g, b, a)
 }
 
 // uiTableValueColor() returns the color stored in v. It is an error to
 // call this on a uiTableValue that does not store a color.
 // TODO define whether all this, for both uiTableValue and uiAttribute, is undefined behavior or a caught error
-pub fn C.uiTableValueColor(v C.uiTableValue, r &f64, g &f64, b &f64, a &f64)
+pub fn C.uiTableValueColor(v &C.uiTableValue, r &f64, g &f64, b &f64, a &f64)
 
-pub fn ui_table_value_color(v C.uiTableValue, r &f64, g &f64, b &f64, a &f64) {
+pub fn ui_table_value_color(v &C.uiTableValue, r &f64, g &f64, b &f64, a &f64) {
 	C.uiTableValueColor(v, r, g, b, a)
 }
 
@@ -2454,7 +2454,7 @@ pub struct C.uiTableModelHandler {
 	// values must remain constant through the lifetime of the
 	// uiTableModel. This method is not guaranteed to be called
 	// depending on the system.
-	columnType fn (&C.uiTableModelHandler, &C.uiTableModel, int) C.uiTableValueType
+	columnType fn (&C.uiTableModelHandler, &C.uiTableModel, int) &C.uiTableValueType
 	// NumRows returns the number or rows in the uiTableModel.
 	// This value must be non-negative.
 	numRows fn (&C.uiTableModelHandler, &C.uiTableModel) int
@@ -2464,7 +2464,7 @@ pub struct C.uiTableModelHandler {
 	// NULL may be returned; refer to the various methods that add
 	// columns to uiTable for details. Once returned, the uiTable
 	// that calls CellValue will free the uiTableValue returned.
-	cellValue fn (&C.uiTableModelHandler, &C.uiTableModel, int, int) C.uiTableValue
+	cellValue fn (&C.uiTableModelHandler, &C.uiTableModel, int, int) &C.uiTableValue
 	// SetCellValue changes the model cell value at (row, column)
 	// in the uiTableModel. Within this function, either do nothing
 	// to keep the current cell value or save the new cell value as
@@ -2570,9 +2570,9 @@ pub struct C.uiTableParams {
 // textModelColumn is where the text comes from.
 // If a row is editable according to textEditableModelColumn,
 // SetCellValue() is called with textModelColumn as the column.
-pub fn C.uiTableAppendTextColumn(l &C.uiTable, name &i8, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
+pub fn C.uiTableAppendTextColumn(l &C.uiTable, name &i8, text_model_column int, text_editable_model_column int, text_params &C.uiTableTextColumnOptionalParams)
 
-pub fn ui_table_append_text_column(l &C.uiTable, name &i8, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
+pub fn ui_table_append_text_column(l &C.uiTable, name &i8, text_model_column int, text_editable_model_column int, text_params &C.uiTableTextColumnOptionalParams) {
 	C.uiTableAppendTextColumn(l, name, text_model_column, text_editable_model_column,
 		text_params)
 }
@@ -2588,9 +2588,9 @@ pub fn ui_table_append_image_column(l &C.uiTable, name &i8, image_model_column i
 
 // uiTableAppendImageTextColumn() appends a column to t that
 // shows both an image and text.
-pub fn C.uiTableAppendImageTextColumn(l &C.uiTable, name &i8, image_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
+pub fn C.uiTableAppendImageTextColumn(l &C.uiTable, name &i8, image_model_column int, text_model_column int, text_editable_model_column int, text_params &C.uiTableTextColumnOptionalParams)
 
-pub fn ui_table_append_image_text_column(l &C.uiTable, name &i8, image_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
+pub fn ui_table_append_image_text_column(l &C.uiTable, name &i8, image_model_column int, text_model_column int, text_editable_model_column int, text_params &C.uiTableTextColumnOptionalParams) {
 	C.uiTableAppendImageTextColumn(l, name, image_model_column, text_model_column, text_editable_model_column,
 		text_params)
 }
@@ -2607,9 +2607,9 @@ pub fn ui_table_append_checkbox_column(l &C.uiTable, name &i8, checkbox_model_co
 
 // uiTableAppendCheckboxTextColumn() appends a column to t
 // that contains both a checkbox and text.
-pub fn C.uiTableAppendCheckboxTextColumn(l &C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams)
+pub fn C.uiTableAppendCheckboxTextColumn(l &C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int, text_model_column int, text_editable_model_column int, text_params &C.uiTableTextColumnOptionalParams)
 
-pub fn ui_table_append_checkbox_text_column(l &C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int, text_model_column int, text_editable_model_column int, text_params C.uiTableTextColumnOptionalParams) {
+pub fn ui_table_append_checkbox_text_column(l &C.uiTable, name &i8, checkbox_model_column int, checkbox_editable_model_column int, text_model_column int, text_editable_model_column int, text_params &C.uiTableTextColumnOptionalParams) {
 	C.uiTableAppendCheckboxTextColumn(l, name, checkbox_model_column, checkbox_editable_model_column,
 		text_model_column, text_editable_model_column, text_params)
 }
@@ -2637,9 +2637,9 @@ pub fn ui_table_append_button_column(l &C.uiTable, name &i8, button_model_column
 }
 
 // uiNewTable() creates a new uiTable with the specified parameters.
-pub fn C.uiNewTable(params C.uiTableParams) C.uiTable
+pub fn C.uiNewTable(params &C.uiTableParams) &C.uiTable
 
-pub fn ui_new_table(params C.uiTableParams) C.uiTable {
+pub fn ui_new_table(params &C.uiTableParams) &C.uiTable {
 	return C.uiNewTable(params)
 }
 
