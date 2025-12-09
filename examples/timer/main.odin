@@ -6,8 +6,8 @@ import "core:fmt"
 import "core:strings"
 import "base:runtime"
 import ui "../.."
+import util "../example_util"
 
-// Multiline entry pointer
 e: ^ui.uiMultilineEntry
 
 // Timer callback: append current time
@@ -32,6 +32,8 @@ say_something :: proc "c" (b: ^ui.uiButton, data: rawptr) {
 }
 
 main :: proc() {
+    util.debug_tracking_allocator_init()
+
     o: ui.uiInitOptions
     mem.set(&o, 0, size_of(ui.uiInitOptions))
     if ui.uiInit(&o) != nil {

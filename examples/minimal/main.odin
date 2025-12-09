@@ -2,6 +2,7 @@ package main
 
 import "core:mem"
 import ui "../.."
+import util "../example_util"
 
 on_closing :: proc"c" (w: ^ui.uiWindow, data: rawptr) -> i32
 {
@@ -10,6 +11,8 @@ on_closing :: proc"c" (w: ^ui.uiWindow, data: rawptr) -> i32
 }
 
 main :: proc() {
+	util.debug_tracking_allocator_init()
+
 	o: ui.uiInitOptions
 
  	mem.set(&o, 0, size_of (ui.uiInitOptions))
