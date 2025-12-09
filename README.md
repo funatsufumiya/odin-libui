@@ -49,7 +49,7 @@ $ LD_LIBRARY_PATH=bin bin/timer
 
 -------
 
-Original README
+Original README ([libui_examples](https://github.com/funatsufumiya/libui_examples))
 
 --------
 
