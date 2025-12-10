@@ -1,6 +1,6 @@
 # odin-libui
 
-Odin language libui-ng wrapper. Tested on Win/Mac/Linux (Ubuntu).
+Odin language [libui-ng](https://github.com/libui-ng/libui-ng) wrapper. Tested on Win/Mac/Linux (Ubuntu).
 
 ![screenshots/basic_controls.png](screenshots/basic_controls.png)
 
