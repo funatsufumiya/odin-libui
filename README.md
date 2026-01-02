@@ -36,6 +36,9 @@ $ DYLD_LIBRARY_PATH=bin bin/graph
 
 ### Linux
 
+> [!NOTE]
+> for arm64, `cp bin/libui_arm64.so bin/libui.so`
+
 ```bash
 $ ./build.sh
 
